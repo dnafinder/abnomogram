@@ -1,5 +1,5 @@
 # abnomogram
-ABNOMOGRAM - Check the Acid-Base status of a bloof samples.<br/>
+ABNOMOGRAM - Check the Acid-Base status of a blood samples.<br/>
 This function executes the analysis of the Acid-Base status of a blood
 sample given the pH and the pCO2 (in mmHg). The function plots a nomogram
 with 13, differently coloured, zones. The zone in which your data fall 
