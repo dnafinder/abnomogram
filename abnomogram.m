@@ -1,4 +1,4 @@
-function abnomogram(varargin)
+function abnomogram(pH,pCO2)
 % ABNOMOGRAM - Check the Acid-Base status of a blood sample. 
 % This function executes the analysis of the Acid-Base status of a blood
 % sample given the pH and the pCO2 (in mmHg). The function plots a nomogram
@@ -31,7 +31,7 @@ validation = @(x) isnumeric(x) && isscalar(x) && isreal (x) && isfinite(x) && (x
 p = inputParser;
 addRequired(p,'x',validation);
 addRequired(p,'y',validation);
-parse(p,varargin{:});
+parse(p,pH,pCO2);
 x=p.Results.x; y=p.Results.y;
 clear p default* validation
 
