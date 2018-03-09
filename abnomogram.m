@@ -15,7 +15,7 @@ function abnomogram(varargin)
 %           - Nomogram plot
 % 
 %      Example: 
-%      abnomogram will show a nomogram for a normal sample
+%      abnomogram(7.4,40.5) will show a nomogram for a normal sample
 %      abnomogram(7.5,45) will show a nomogram with your data into the metabolic alkalosis zone
 %
 %           Created by Giuseppe Cardillo
@@ -27,12 +27,10 @@ function abnomogram(varargin)
 % http://www.mathworks.com/matlabcentral/fileexchange/20571
 
 %Input error handling
-defaultpH=7.4;
-defaultpCO2=40.5;
 validation = @(x) isnumeric(x) && isscalar(x) && isreal (x) && isfinite(x) && (x > 0);
 p = inputParser;
-addOptional(p,'x',defaultpH,validation);
-addOptional(p,'y',defaultpCO2,validation);
+addRequired(p,'x',validation);
+addRequired(p,'y',validation);
 parse(p,varargin{:});
 x=p.Results.x; y=p.Results.y;
 clear p default* validation

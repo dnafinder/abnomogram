@@ -15,7 +15,7 @@ Syntax: 	ABNONOGRAM(pH,pCO2)
           - Nomogram plot
 
      Example: 
-     abnomogram will show a nomogram for a normal sample
+     abnomogram(7.4,40.5) will show a nomogram for a normal sample
      abnomogram(7.5,45) will show a nomogram with your data into the metabolic alkalosis zone
 
           Created by Giuseppe Cardillo
