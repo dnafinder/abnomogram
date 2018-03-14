@@ -27,13 +27,12 @@ function abnomogram(pH,pCO2)
 % http://www.mathworks.com/matlabcentral/fileexchange/20571
 
 %Input error handling
-validation = @(x) isnumeric(x) && isscalar(x) && isreal (x) && isfinite(x) && (x > 0);
 p = inputParser;
-addRequired(p,'x',validation);
-addRequired(p,'y',validation);
+addRequired(p,'x',@(x) validateattributes(x,{'numeric'},{'scalar','real','finite','nonnan','positive'}));
+addRequired(p,'y',@(x) validateattributes(x,{'numeric'},{'scalar','real','finite','nonnan','positive'}));
 parse(p,pH,pCO2);
 x=p.Results.x; y=p.Results.y;
-clear p default* validation
+clear p
 
 x=10^(-x+9); %transform pH in nM units
 Z=zeros(1,14); %Zone vector preallocation
